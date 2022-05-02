@@ -1,0 +1,36 @@
+<div class="column is-one-third">
+    <div data-aos="zoom-in-up" class="card" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+        <a href="{{ .Permalink }}" itemprop="url">
+            <div class="card-image">
+                <figure class="image is-4by3" style="position: relative;">
+                    <div style="position: absolute; right: 0; top: 0; z-index: 999;" class="button is-small is-black">
+                        {{ range first 1 .Params.tags }}
+                        {{ . }}
+                        {{ end }}
+                    </div>
+                  <img class="" src="{{ .Params.cover }}" alt="{{ .Params.cover_attribution }}">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="" itemprop="name">
+                  <h4 class="is-size-4 is-uppercase title has-text-weight-bold">{{ .Title }}</h4>
+                  <p class="is-size-6 subtitle">{{ .Params.description }}</p>
+                </div>
+                <hr class="navbar-divider">
+                <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img class="is-rounded" src="https://avatars.githubusercontent.com/u/40151808?v=4" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="has-text-grey-dark">
+                      <p class="is-size-7">
+                          {{ .Params.author }} <br>
+                          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date }}</time>
+                        </p>
+                    </div>
+                  </div>
+              </div>
+        </a>
+      </div>
+</div>

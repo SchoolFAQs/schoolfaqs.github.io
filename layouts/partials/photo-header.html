@@ -1,0 +1,15 @@
+<header class="hero">
+    <div class="hero-body has-text-centered">
+        <h1 class="title is-uppercase is-size-1-desktop is-size-2-mobile" itemprop="name headline">My Gallery</h1>
+        <p class="subtitle" itemprop="description">A collection of some photographs I've taken over time..</p>
+        <p class="is-size-7">
+            <small>Touch each image for the color version</small><br>
+            <span>by</span>
+            <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+                <span itemprop="name">
+                    <a href="{{ .Params.profile | default .Site.Author.profile | default "#" }}" itemprop="url" rel="author">{{ .Params.author | default .Site.Author.name }}</a>
+                </span>
+            </span>
+        </p>
+    </div>
+</header>

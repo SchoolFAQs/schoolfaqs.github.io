@@ -1,0 +1,12 @@
+<div class="columns is-centered">
+    <div class="column is-four-fifths-desktop">
+        <figure class="">
+            <img src="{{ .Get "src" }}" alt="{{ .Get "caption" }}" />
+            <figcaption>
+                {{ if isset .Params "caption" }}
+                    <p class="has-text-centered is-size-7">{{ .Get "caption" }}</p>
+                {{ end }}
+            </figcaption>
+        </figure>
+    </div>
+</div>

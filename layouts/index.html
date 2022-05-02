@@ -1,0 +1,89 @@
+{{ partial "header.html" . }}
+<body>
+  <div id="wrapper">
+    <header class="site-header">
+      <div class="container">
+        <ul class="site-nav">
+          {{ partial "navigation.html" . }}
+        </ul>
+      </div>
+    </header>
+
+    <div class="">
+      <div
+        class="container mx-auto"
+      >
+        <!-- Landing -->
+        <section class="w-full">
+          <main>
+            <div
+              class="relative pt-16 pb-5 flex content-center items-center justify-center"
+              style="min-height: 75vh"
+            >
+              <div class="absolute top-0 w-full h-full bg-center bg-cover">
+                <span
+                  id="blackOverlay"
+                  class="w-full h-full absolute opacity-75 bg-gray-900"
+                ></span>
+              </div>
+              <div class="container relative mx-auto">
+                <div class="items-center flex flex-wrap">
+                  <div
+                    class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center"
+                  >
+                    <div class="pr-12">
+                      <h1
+                        class="text-white text-4xl text-center font-semibold md:text-5xl lg:text-5xl"
+                      >
+                        School<span class="text-pink-500 uppercase">FAQs</span>
+                      </h1>
+                      <blockquote
+                        class="lg:mt-4 md:mt-4 mb-4 mt-1 text-lg text-center text-gray-300"
+                      >
+                        "Faster and Simpler way for receiving The Annual
+                        Presidential Grant via Mobile Money" <br />
+                        <cite
+                          >- Muluh <span class="text-pink-500">MG</span> Godson
+                          -</cite
+                        >
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+                style="height: 70px; transform: translateZ(0px)"
+              >
+                <svg
+                  class="absolute bottom-0 overflow-hidden"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                  version="1.1"
+                  viewBox="0 0 2560 100"
+                  x="0"
+                  y="0"
+                >
+                  <polygon
+                    class="text-gray-300 fill-current"
+                    points="2560 0 2560 100 0 100"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </main>
+        </section>
+
+        <section class="my-5 container mx-auto">
+          <h1 class="text-pink-500 text-center text-3xl uppercase">The Team</h1>
+          <div class="grid grid-cols-2 gap-3 justify-items-center">
+            {{ range $.Site.Data.team }}
+              {{ partial "profile-card.html" . }} 
+            {{ end }}
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  {{ partial "footer.html" . }}
+</body>

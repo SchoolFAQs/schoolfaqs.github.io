@@ -1,0 +1,22 @@
+<header class="hero">
+    <div class="hero-body has-text-centered">
+        <h1 class="title is-uppercase is-size-1-desktop is-size-2-mobile" itemprop="name headline">{{ .Title }}</h1>
+        {{ if .Description }}
+            <p class="subtitle" itemprop="description">{{ .Description }}</p>
+        {{ end }}
+    <p class="is-size-7">
+        <span class="">Published <time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{ dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date }}</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="{{ .Params.profile | default .Site.Author.profile | default "#" }}" itemprop="url" rel="author">{{ .Params.author | default .Site.Author.name }}</a>
+            </span>
+        </span>
+    </p>
+    {{ if .Site.Params.readingTime }}
+        <p class="is-size-7">
+            <span>{{ .Site.Params.readingTimeText }} {{ .Page.ReadingTime }} min</span>
+        </p>
+    {{ end }}
+    </div>
+</header>

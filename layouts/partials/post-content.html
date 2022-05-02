@@ -1,0 +1,7 @@
+<div class="hero p-2 content" itemprop="articleBody">
+    {{ with .Params.Image }}
+        <img class="post-featured-image" src="{{ . }}">
+    {{ end }}
+
+    {{ .Content }}
+</div>

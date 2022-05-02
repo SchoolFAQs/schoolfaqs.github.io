@@ -1,0 +1,8 @@
+{{ if .Site.Params.intro }}
+    <header class="hero">
+        <div class="hero-body has-text-centered">
+            <h1 class="title is-uppercase" itemprop="name">{{ .Site.Params.headline }}</h1>
+            <p class="subtitle">{{ .Site.Params.description }}</p>
+        </div>
+    </header>
+{{ end }}

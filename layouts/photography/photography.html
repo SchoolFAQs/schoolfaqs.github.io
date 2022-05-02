@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+{{ partial "photo-header.html" . }}
+
+<section class="container">
+    <div class="tile is-ancestor">
+        {{ range .Params.photos }}
+            <div class="tile">
+                <div class="">
+                    <img src="{{ . }}" alt="" class="bw-img">
+                </div>
+            </div>
+        {{ end }}
+    </div>
+</section>
+
+{{ partial "footer.html" . }}
+
